@@ -20,6 +20,10 @@ namespace HeyCoder.ObjectCompare
                 result.IsEqual = objectA == objectB;
                 return result;
             }
+            if (parameters == null)
+            {
+                return new CompareResult { IsEqual = objectA.Equals(objectB) };
+            }
             var typeA = objectA.GetType();
             var typeB = objectB.GetType();
             foreach (var parameter in parameters)
